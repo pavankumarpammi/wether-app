@@ -2,14 +2,98 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>whether App</title>
+    <title>weather App</title>
+    <link rel="stylesheet" href="7web.css">
+    <style>
+        body{
+    background-image: url(changeBg());
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-attachment: fixed;
+}
+
+
+.align{
+  margin-top:15%;
+
+}
+h1{
+ color:#fff;
+ font-size:700%;
+ letter-spacing:0.05em;
+}
+button{
+ background-color:#F86F03;
+ border-radius:5px;
+ margin-left:15px;
+ font-size:20px;
+ padding: 10px 20px;
+  text-align:center;
+  font-weight:bold;
+  cursor:pointer;
+}
+button:focus{
+ background-color:#FD8D14;
+}
+
+#cityName:focus {
+  border: 3px solid #F86F03;
+  background-color: #ECECEC;
+}
+#cityName{
+  border:3px solid #ccc;
+  background-color: #F5F5F5;
+   padding: 10px 20px;
+   width:25%;
+   font-weight:500;
+   font-size:20px;
+   outline:none;
+   border-radius:5px;
+}
+    </style>
   </head>
   <body>
-    <h1 style="color:red;">Whether App</h1>
+    <center>
+    <div class="align">
+    <h1>Weather App</h1>
     <form  action="/" method="post">
-      <label for="cityName">City Name:</label>
-      <input type="text" id="cityName" name="cityName">
+      <input type="text" placeholder="Search cityname" id="cityName" name="cityName">
       <button type="submit" name="button">Go</button>
     </form>
+    </div>
+    </center>
+    <script>
+        function changeBg(){
+
+            const images = [
+                'url("https://iili.io/HZRSVeI.jpg")',
+                'url("https://iili.io/HZlVDLG.jpg")',
+                'url("https://iili.io/HZRSGJp.jpg")',
+                'url("https://iili.io/HZRSVeI.jpg")',
+                'url("https://iili.io/HZRShzX.jpg")',
+                'url("https://iili.io/HZlclnV.jpg")',
+                'url("https://iili.io/HZlc0MB.jpg")',
+                'url("https://iili.io/HZlc16P.jpg")',
+                'url("https://iili.io/HZlcGF1.jpg")',
+                'url("https://iili.io/HZlVDLG.jpg")',
+                'url("https://iili.io/HZlcMcF.jpg")',
+                'url("https://iili.io/HZlcV8g.jpg")',
+                'url("https://iili.io/HZlcX9a.jpg")',
+                'url("https://iili.io/HZlchAJ.jpg")',
+                'url("https://iili.io/HZlcjwv.jpg")',
+                'url("https://iili.io/HZlcwtR.jpg")',
+                'url("https://iili.io/HZlVDLG.jpg")',
+                'url("https://iili.io/HZlceMN.jpg")',
+
+
+            ]
+            const body = document.querySelector('body')
+            const bg = images[Math.floor(Math.random() * images.length)];
+            body.style.backgroundImage = bg;
+
+        }
+        setInterval(changeBg, 3000)
+    </script>
   </body>
 </html>
